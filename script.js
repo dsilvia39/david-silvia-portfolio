@@ -1,19 +1,24 @@
-const menuButton = document.querySelector('.menu-button');
-const nav = document.querySelector('#site-nav');
+const menuButton = document.querySelector(".menu-button");
+const nav = document.querySelector("#site-nav");
 
-menuButton?.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(isOpen));
+menuButton?.addEventListener("click", () => {
+  const isOpen = nav.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(isOpen));
 });
 
-nav?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('open');
-    menuButton?.setAttribute('aria-expanded', 'false');
+nav?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menuButton?.setAttribute("aria-expanded", "false");
   });
 });
 
-document.querySelector('#year').textContent = new Date().getFullYear();
+const year = document.querySelector("#year");
+
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
+
 const academaiCarousel = document.querySelector(".academai-carousel");
 
 if (academaiCarousel) {
@@ -58,7 +63,9 @@ if (academaiCarousel) {
           ".academai-screenshot-scroll"
         );
 
-        screenshot.scrollLeft = 0;
+        if (screenshot) {
+          screenshot.scrollLeft = 0;
+        }
       }
     });
 
@@ -78,11 +85,11 @@ if (academaiCarousel) {
     titleLabel.textContent = slides[currentSlide].dataset.slideTitle;
   }
 
-  previousButton.addEventListener("click", () => {
+  previousButton?.addEventListener("click", () => {
     showAcademaiSlide(currentSlide - 1);
   });
 
-  nextButton.addEventListener("click", () => {
+  nextButton?.addEventListener("click", () => {
     showAcademaiSlide(currentSlide + 1);
   });
 
@@ -103,4 +110,6 @@ if (academaiCarousel) {
       showAcademaiSlide(currentSlide + 1);
     }
   });
+
+  showAcademaiSlide(0);
 }
