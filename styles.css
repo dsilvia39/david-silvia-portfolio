@@ -121,3 +121,114 @@ footer { min-height:110px; display:grid; grid-template-columns:1fr 1fr auto; ali
 .screenshot-scroll::-webkit-scrollbar-corner {
   background: var(--surface);
 }
+.academai-project {
+  grid-column: 1 / -1;
+  padding-bottom: 70px;
+}
+
+.academai-carousel {
+  margin-top: 30px;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-2);
+}
+
+.academai-slides {
+  width: 100%;
+  height: 570px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--ink);
+}
+
+.academai-slide {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.academai-slide[hidden] {
+  display: none;
+}
+
+.academai-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.academai-controls {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.academai-arrow {
+  width: 44px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  color: var(--cream);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.academai-arrow:hover,
+.academai-arrow:focus-visible {
+  color: var(--blue-bright);
+  border-color: var(--blue-bright);
+}
+
+.academai-status {
+  color: var(--muted) !important;
+  font: 10px "DM Mono", monospace !important;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.academai-current,
+.academai-title {
+  color: var(--cream);
+}
+
+.academai-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.academai-dot {
+  width: 26px;
+  height: 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 99px;
+  background: var(--line);
+  cursor: pointer;
+}
+
+.academai-dot.is-active {
+  background: var(--blue-bright);
+}
+
+@media (max-width: 800px) {
+  .academai-slides {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .academai-status {
+    font-size: 9px !important;
+  }
+}
