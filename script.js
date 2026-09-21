@@ -52,6 +52,14 @@ if (academaiCarousel) {
       slide.hidden = !isActive;
       slide.classList.toggle("is-active", isActive);
       slide.setAttribute("aria-hidden", String(!isActive));
+
+      if (isActive) {
+        const screenshot = slide.querySelector(
+          ".academai-screenshot-scroll"
+        );
+
+        screenshot.scrollLeft = 0;
+      }
     });
 
     dots.forEach((dot, dotIndex) => {
