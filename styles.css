@@ -356,3 +356,47 @@ footer { min-height:110px; display:grid; grid-template-columns:1fr 1fr auto; ali
     font-size: 9px;
   }
 }
+/* Both featured projects use the same full width */
+.featured-project,
+.academai-featured-project {
+  width: 100%;
+}
+
+/* Space between Avalanche Intelligence and AcademAI */
+.academai-featured-project {
+  margin-top: 56px;
+}
+
+/* Keep the Next Build card at half width */
+.next-project-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.next-project-grid .project-card {
+  grid-column: 1;
+  width: 100%;
+}
+
+/* Remove any older rule that makes the first project card full width */
+/*
+Delete this if it is still in styles.css:
+
+.project-grid > .project-card:first-child {
+  grid-column: 1 / -1;
+}
+*/
+
+@media (max-width: 800px) {
+  .academai-featured-project {
+    margin-top: 36px;
+  }
+
+  .next-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .next-project-grid .project-card {
+    grid-column: auto;
+  }
+}
